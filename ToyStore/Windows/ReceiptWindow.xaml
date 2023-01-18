@@ -1,0 +1,104 @@
+﻿<Window x:Class="ToyStore.Windows.ReceiptWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToyStore.Windows"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Icon="/Resourses/Logotype.png"
+        Title="Toy Store" MinHeight="600" MinWidth="600"
+        MaxHeight="600" MaxWidth="600">
+
+    <Grid Background="#FF78C8F0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0"  
+                   Source="/Resourses/Logotype.png"
+                   Margin="10"/>
+
+            <Label Grid.Column="1" 
+                   Content="Магазин игрушек Toy Store"
+                   FontSize="32" HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" />
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Background="gold"
+                  Grid.Row="0" />
+
+            <Label Content="Ваш чек"
+                   FontSize="28" Height="44" Width="124" />
+
+            <TextBlock x:Name="txtReceipt"
+                       Grid.Row="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       Background="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="20"
+                       IsEnabled="False"/>
+
+            <Grid Grid.Row="2">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnSave" 
+                        Content="Сохранить"
+                        FontSize="24"
+                        Height="60"
+                        Width="150"
+                        IsDefault="True"
+                        HorizontalAlignment="Center"  
+                        Foreground="#FF05418C" 
+                        Grid.Column="2" Click="btnSave_Click"/>
+
+                <Button x:Name="btnExit" Content="Выход"
+                        FontSize="24"
+                        Height="60"
+                        Width="150"
+                        Foreground="gold"
+                        Background="#FF05418C"
+                        HorizontalAlignment="Center"  
+                        Grid.Column="0" Click="Button_Click"/>
+
+                <Button x:Name="btnBack" Content="Отмена"
+                        FontSize="24"
+                        Height="60"
+                        Width="150"
+                        Foreground="gold"
+                        Background="#FF05418C"
+                        IsCancel="True" 
+                        HorizontalAlignment="Center"  
+                        Grid.Column="1" Click="btnBack_Click"/>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
